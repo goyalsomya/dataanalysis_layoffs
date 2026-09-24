@@ -10,7 +10,7 @@ An end-to-end Python Data Analytics, Exploratory Data Analysis (EDA), and Machin
   - Excludes Month 8 of 2026 (August 2026) data, covering strictly **March 11, 2020 to July 31, 2026** (**4,543 clean records**).
   - All analysis, metrics, and machine learning models strictly process real clean records without inserting any artificial or synthetic rows.
 - **Scikit-Learn Machine Learning Engine (`ml_model.py`)**:
-  - Uses `RandomForestRegressor` with log-transformed target variables $\log(1 + \text{total\_laid\_off})$ to predict expected headcount cut size and classify risk tiers (*Low, Moderate, High, Severe Risk*).
+  - Uses `RandomForestRegressor` with log-transformed target variables to predict expected headcount cut size and classify risk tiers (*Low, Moderate, High, Severe Risk*).
 - **Sidebar ML Predictor Widget**:
   - Located directly in the **Left Sidebar** for instant interactive risk prediction based on Industry, Stage, Country, and Funding.
 - **Layoffs by Companies (Descending Order)**:
