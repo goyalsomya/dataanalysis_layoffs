@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Tech Layoffs Analytics & ML Dashboard</title>
+  <meta name="description" content="Interactive Data Analytics, EDA, & Machine Learning Prediction Dashboard for Tech Layoffs">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Sidebar Controls -->
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-icon">🤖</span>
+        <div class="brand-title">ML Layoffs Predictor</div>
+      </div>
+
+      <!-- ML Prediction Section in Left Sidebar -->
+      <div class="sidebar-section ml-sidebar-widget">
+        <div class="filter-group">
+          <label for="pred-industry">Target Industry</label>
+          <select id="pred-industry"></select>
+        </div>
+
+        <div class="filter-group">
+          <label for="pred-stage">Funding Stage</label>
+          <select id="pred-stage"></select>
+        </div>
+
+        <div class="filter-group">
+          <label for="pred-country">Country</label>
+          <select id="pred-country"></select>
+        </div>
+
+        <div class="filter-group">
+          <label for="pred-funds">Funds Raised ($ Millions)</label>
+          <input type="number" id="pred-funds" value="500" min="0" step="10">
+        </div>
+
+        <button id="btn-run-predict" class="btn-predict">Run ML Prediction</button>
+
+        <div class="ml-result-card" id="ml-result-card">
+          <div class="result-title">Predicted Layoff Size</div>
+          <div class="result-number" id="pred-result-number">--</div>
+          <div class="result-badge" id="pred-result-badge">Click predict</div>
+          <div class="result-sub" id="pred-result-sub">Random Forest Model</div>
+        </div>
+      </div>
+
+      <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 8px 0;">
+
+      <!-- Global Dataset Filters -->
+      <div class="sidebar-section-title">📊 Dataset Filters</div>
+
+      <div class="filter-group">
+        <label for="filter-company">Company</label>
+        <select id="filter-company">
+          <option value="All">All Companies</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="filter-year">Year</label>
+        <select id="filter-year">
+          <option value="0">All Years</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="filter-industry">Industry</label>
+        <select id="filter-industry">
+          <option value="All">All Industries</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="filter-country">Country</label>
+        <select id="filter-country">
+          <option value="All">All Countries</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="filter-stage">Funding Stage</label>
+        <select id="filter-stage">
+          <option value="All">All Stages</option>
+        </select>
+      </div>
+
+      <div class="filter-group">
+        <label for="filter-search">Search Text</label>
+        <input type="text" id="filter-search" placeholder="Search company...">
+      </div>
+
+      <button id="btn-reset" class="btn-reset">Reset All Filters</button>
+
+      <button id="btn-export" class="btn-export">
+        <span>📥 Export Data (CSV)</span>
+      </button>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Header -->
+      <header class="top-header">
+        <div class="header-title">
+          <h1>Global Tech Layoffs Analytics & ML</h1>
+          <p>Real-time Python analysis, EDA stats, & Machine Learning prediction engine</p>
+        </div>
+        <div class="badge-live">
+          <span class="badge-dot"></span> ML Model Active
+        </div>
+      </header>
+
+      <!-- KPI Summary Cards -->
+      <section class="kpi-grid">
+        <div class="kpi-card">
+          <span class="kpi-label">Total Laid Off</span>
+          <span class="kpi-value" id="kpi-total-laidoff">0</span>
+          <span class="kpi-sub" id="kpi-date-range">Loading...</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">Affected Companies</span>
+          <span class="kpi-value" id="kpi-companies">0</span>
+          <span class="kpi-sub">Unique Organizations</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">Countries Impacted</span>
+          <span class="kpi-value" id="kpi-countries">0</span>
+          <span class="kpi-sub">Global Footprint</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">Total Shutdowns</span>
+          <span class="kpi-value" id="kpi-shutdowns">0</span>
+          <span class="kpi-sub">100% Layoff Rate</span>
+        </div>
+        <div class="kpi-card">
+          <span class="kpi-label">Avg Cut per Event</span>
+          <span class="kpi-value" id="kpi-avg-layoff">0</span>
+          <span class="kpi-sub">Employees / Event</span>
+        </div>
+      </section>
+
+      <!-- AI Insights Banner -->
+      <section class="insights-banner">
+        <div class="insights-header">
+          <span>🧠 Dynamic Dataset Insights & Highlights</span>
+        </div>
+        <div class="insights-list" id="insights-list">
+          <div class="insight-item">Loading statistical insights...</div>
+        </div>
+      </section>
+
+      <!-- Interactive Charts Grid -->
+      <section class="charts-grid">
+        <div class="chart-card full-width">
+          <div class="chart-header">
+            <span class="chart-title">📈 Monthly Layoffs Trend & Timeline</span>
+            <div class="chart-controls" style="display: flex; gap: 10px; align-items: center;">
+              <select id="trend-year-select" style="background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; padding: 5px 10px; border-radius: 6px; font-size: 0.85rem; outline: none;">
+                <option value="0">All Years Timeline</option>
+                <option value="2026">Year 2026</option>
+                <option value="2025">Year 2025</option>
+                <option value="2024">Year 2024</option>
+                <option value="2023">Year 2023</option>
+                <option value="2022">Year 2022</option>
+                <option value="2021">Year 2021</option>
+                <option value="2020">Year 2020</option>
+              </select>
+              <select id="trend-groupby-select" style="background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; padding: 5px 10px; border-radius: 6px; font-size: 0.85rem; outline: none;">
+                <option value="month">Monthly View</option>
+                <option value="year">Yearly Aggregate</option>
+              </select>
+            </div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="chart-trends"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-header">
+            <span class="chart-title">🏢 Layoffs by Companies (Desc)</span>
+            <select id="comp-chart-select" style="background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; padding: 4px 8px; border-radius: 6px; font-size: 0.82rem; outline: none;">
+              <option value="All">All Companies</option>
+            </select>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="chart-companies"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-header">
+            <span class="chart-title">🏭 Layoffs by Industry Sector</span>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="chart-industry"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-header">
+            <span class="chart-title">🌍 Geographic Country Distribution</span>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="chart-country"></canvas>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <div class="chart-header">
+            <span class="chart-title">📊 Layoffs by Funding Stage</span>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="chart-stage"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- Exploratory Data Analysis (EDA) Section -->
+      <section class="table-card">
+        <div class="table-header-row">
+          <h2 style="font-size: 1.1rem; font-weight: 700;">📊 Exploratory Data Analysis (EDA) Descriptive Metrics</h2>
+        </div>
+        <div class="table-container">
+          <table id="eda-table">
+            <thead>
+              <tr>
+                <th>Feature Metric</th>
+                <th>Sample Count</th>
+                <th>Null Count (%)</th>
+                <th>Mean</th>
+                <th>Std Dev</th>
+                <th>Min</th>
+                <th>25%</th>
+                <th>Median</th>
+                <th>75%</th>
+                <th>Max</th>
+                <th>Skewness</th>
+              </tr>
+            </thead>
+            <tbody id="eda-tbody">
+              <tr><td colspan="11" style="text-align:center;">Loading EDA Statistics...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Paginated Data Table -->
+      <section class="table-card">
+        <div class="table-header-row">
+          <h2 style="font-size: 1.1rem; font-weight: 700;">📄 Filtered Dataset Log</h2>
+          <span id="table-info" style="color: var(--text-muted); font-size: 0.85rem;">Showing 0 records</span>
+        </div>
+
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th onclick="sortTable('company')">Company ⇕</th>
+                <th onclick="sortTable('industry')">Industry ⇕</th>
+                <th onclick="sortTable('total_laid_off')">Laid Off ⇕</th>
+                <th onclick="sortTable('percentage_laid_off')">% Laid Off ⇕</th>
+                <th onclick="sortTable('stage')">Stage ⇕</th>
+                <th onclick="sortTable('country')">Country ⇕</th>
+                <th onclick="sortTable('date')">Date ⇕</th>
+              </tr>
+              <tr class="table-filter-row" style="background: rgba(15, 23, 42, 0.6);">
+                <th style="padding: 6px;"><input type="text" id="col-filter-company" placeholder="Filter company..." style="width: 100%; font-size: 0.78rem; padding: 5px 8px; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; border-radius: 6px; outline: none;"></th>
+                <th style="padding: 6px;"><select id="col-filter-industry" style="width: 100%; font-size: 0.78rem; padding: 5px 6px; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; border-radius: 6px; outline: none;"><option value="All">All Industries</option></select></th>
+                <th style="padding: 6px;"><input type="number" id="col-filter-laidoff" placeholder="Min cut..." style="width: 100%; font-size: 0.78rem; padding: 5px 6px; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; border-radius: 6px; outline: none;"></th>
+                <th style="padding: 6px;"></th>
+                <th style="padding: 6px;"><select id="col-filter-stage" style="width: 100%; font-size: 0.78rem; padding: 5px 6px; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; border-radius: 6px; outline: none;"><option value="All">All Stages</option></select></th>
+                <th style="padding: 6px;"><select id="col-filter-country" style="width: 100%; font-size: 0.78rem; padding: 5px 6px; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; border-radius: 6px; outline: none;"><option value="All">All Countries</option></select></th>
+                <th style="padding: 6px;"><select id="col-filter-year" style="width: 100%; font-size: 0.78rem; padding: 5px 6px; background: rgba(15, 23, 42, 0.9); border: 1px solid var(--border-color); color: #fff; border-radius: 6px; outline: none;"><option value="0">All Years</option></select></th>
+              </tr>
+            </thead>
+            <tbody id="table-body">
+              <tr><td colspan="7" style="text-align: center; color: var(--text-muted);">Loading data...</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination">
+          <span id="page-indicator" style="font-size: 0.85rem; color: var(--text-muted);">Page 1 of 1</span>
+          <div class="pagination-buttons">
+            <button id="btn-prev-page" class="btn-page" disabled>Previous</button>
+            <button id="btn-next-page" class="btn-page" disabled>Next</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

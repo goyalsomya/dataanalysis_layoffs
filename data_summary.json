@@ -1,0 +1,849 @@
+{
+  "kpis": {
+    "total_records": 4543,
+    "total_laid_off": 927975.0,
+    "total_companies": 2956,
+    "total_countries": 67,
+    "total_industries": 30,
+    "total_funds_raised_m": 3508792.0955,
+    "total_shutdowns": 359,
+    "date_range": {
+      "start": "2020-03-11",
+      "end": "2026-07-31"
+    }
+  },
+  "key_insights": [
+    "A total of 927,975 tech workforce layoffs were recorded across 2,956 companies in 67 countries from 2020-03-11 to 2026-07-31.",
+    "The top industry impacted by total layoffs is Other / Unspecified with 115,835 reported layoffs.",
+    "The top company by overall headcount reduction is Amazon with 59,291 layoffs.",
+    "A total of 359 company shutdown events (100% staff laid off) were tracked in the dataset.",
+    "Post-IPO companies accounted for the largest volume of layoffs compared to early-stage startups."
+  ],
+  "top_companies": [
+    {
+      "company": "Amazon",
+      "total_laid_off": 59291.0
+    },
+    {
+      "company": "Intel",
+      "total_laid_off": 43115.0
+    },
+    {
+      "company": "Meta",
+      "total_laid_off": 35700.0
+    },
+    {
+      "company": "Microsoft",
+      "total_laid_off": 34855.0
+    },
+    {
+      "company": "Dell",
+      "total_laid_off": 23650.0
+    },
+    {
+      "company": "Oracle",
+      "total_laid_off": 22294.0
+    },
+    {
+      "company": "Cisco",
+      "total_laid_off": 18521.0
+    },
+    {
+      "company": "Salesforce",
+      "total_laid_off": 16611.0
+    },
+    {
+      "company": "Tesla",
+      "total_laid_off": 14500.0
+    },
+    {
+      "company": "Google",
+      "total_laid_off": 13697.0
+    },
+    {
+      "company": "SAP",
+      "total_laid_off": 11000.0
+    },
+    {
+      "company": "Ericsson",
+      "total_laid_off": 10100.0
+    },
+    {
+      "company": "Philips",
+      "total_laid_off": 10000.0
+    },
+    {
+      "company": "PayPal",
+      "total_laid_off": 9428.0
+    },
+    {
+      "company": "Flink",
+      "total_laid_off": 8100.0
+    }
+  ],
+  "industry_summary": [
+    {
+      "industry": "Other / Unspecified",
+      "total_laid_off": 115835.0,
+      "event_count": 309,
+      "avg_funds_raised": 349.4732824427481
+    },
+    {
+      "industry": "Retail",
+      "total_laid_off": 108006.0,
+      "event_count": 361,
+      "avg_funds_raised": 863.6433846153845
+    },
+    {
+      "industry": "Hardware",
+      "total_laid_off": 105200.0,
+      "event_count": 85,
+      "avg_funds_raised": 1047.7608695652175
+    },
+    {
+      "industry": "Consumer",
+      "total_laid_off": 97997.0,
+      "event_count": 312,
+      "avg_funds_raised": 2230.8782442748093
+    },
+    {
+      "industry": "Finance",
+      "total_laid_off": 70162.0,
+      "event_count": 540,
+      "avg_funds_raised": 506.6574493927125
+    },
+    {
+      "industry": "Transportation",
+      "total_laid_off": 67402.0,
+      "event_count": 274,
+      "avg_funds_raised": 2655.327109375
+    },
+    {
+      "industry": "Food",
+      "total_laid_off": 52101.0,
+      "event_count": 252,
+      "avg_funds_raised": 754.2456588983051
+    },
+    {
+      "industry": "Healthcare",
+      "total_laid_off": 40330.0,
+      "event_count": 333,
+      "avg_funds_raised": 436.2638436482085
+    },
+    {
+      "industry": "Infrastructure",
+      "total_laid_off": 24835.0,
+      "event_count": 78,
+      "avg_funds_raised": 198.28985507246378
+    },
+    {
+      "industry": "Travel",
+      "total_laid_off": 24340.0,
+      "event_count": 113,
+      "avg_funds_raised": 884.0051020408164
+    },
+    {
+      "industry": "Sales",
+      "total_laid_off": 22048.0,
+      "event_count": 77,
+      "avg_funds_raised": 187.03199999999998
+    },
+    {
+      "industry": "Education",
+      "total_laid_off": 21131.0,
+      "event_count": 165,
+      "avg_funds_raised": 359.5324324324325
+    },
+    {
+      "industry": "Real Estate",
+      "total_laid_off": 20896.0,
+      "event_count": 166,
+      "avg_funds_raised": 931.7838709677419
+    },
+    {
+      "industry": "HR",
+      "total_laid_off": 16303.0,
+      "event_count": 115,
+      "avg_funds_raised": 174.797
+    },
+    {
+      "industry": "Marketing",
+      "total_laid_off": 16195.0,
+      "event_count": 220,
+      "avg_funds_raised": 218.94797979797977
+    },
+    {
+      "industry": "Crypto",
+      "total_laid_off": 15792.0,
+      "event_count": 177,
+      "avg_funds_raised": 313.1007194244604
+    },
+    {
+      "industry": "Security",
+      "total_laid_off": 14741.0,
+      "event_count": 164,
+      "avg_funds_raised": 328.58273381294964
+    },
+    {
+      "industry": "Data",
+      "total_laid_off": 14358.0,
+      "event_count": 144,
+      "avg_funds_raised": 407.1873015873016
+    },
+    {
+      "industry": "Media",
+      "total_laid_off": 12216.0,
+      "event_count": 162,
+      "avg_funds_raised": 4028.7333333333336
+    },
+    {
+      "industry": "Fitness",
+      "total_laid_off": 10146.0,
+      "event_count": 48,
+      "avg_funds_raised": 567.3560975609756
+    },
+    {
+      "industry": "Energy",
+      "total_laid_off": 9880.0,
+      "event_count": 49,
+      "avg_funds_raised": 974.1777777777778
+    },
+    {
+      "industry": "Manufacturing",
+      "total_laid_off": 9534.0,
+      "event_count": 33,
+      "avg_funds_raised": 640.8
+    },
+    {
+      "industry": "Support",
+      "total_laid_off": 8535.0,
+      "event_count": 67,
+      "avg_funds_raised": 224.6225806451613
+    },
+    {
+      "industry": "Logistics",
+      "total_laid_off": 8165.0,
+      "event_count": 75,
+      "avg_funds_raised": 607.2028985507246
+    },
+    {
+      "industry": "Recruiting",
+      "total_laid_off": 6732.0,
+      "event_count": 59,
+      "avg_funds_raised": 130.48936170212767
+    },
+    {
+      "industry": "Construction",
+      "total_laid_off": 3977.0,
+      "event_count": 25,
+      "avg_funds_raised": 360.4583333333333
+    },
+    {
+      "industry": "Aerospace",
+      "total_laid_off": 3472.0,
+      "event_count": 24,
+      "avg_funds_raised": 459.875
+    },
+    {
+      "industry": "Product",
+      "total_laid_off": 3399.0,
+      "event_count": 59,
+      "avg_funds_raised": 250.31020408163266
+    },
+    {
+      "industry": "AI",
+      "total_laid_off": 3131.0,
+      "event_count": 35,
+      "avg_funds_raised": 1079.75
+    },
+    {
+      "industry": "Legal",
+      "total_laid_off": 1116.0,
+      "event_count": 22,
+      "avg_funds_raised": 247.0
+    }
+  ],
+  "country_summary": [
+    {
+      "country": "United States",
+      "total_laid_off": 657606.0,
+      "event_count": 2854
+    },
+    {
+      "country": "India",
+      "total_laid_off": 67509.0,
+      "event_count": 348
+    },
+    {
+      "country": "Germany",
+      "total_laid_off": 32055.0,
+      "event_count": 134
+    },
+    {
+      "country": "United Kingdom",
+      "total_laid_off": 24694.0,
+      "event_count": 160
+    },
+    {
+      "country": "Netherlands",
+      "total_laid_off": 22175.0,
+      "event_count": 31
+    },
+    {
+      "country": "Sweden",
+      "total_laid_off": 20379.0,
+      "event_count": 45
+    },
+    {
+      "country": "Canada",
+      "total_laid_off": 16636.0,
+      "event_count": 178
+    },
+    {
+      "country": "Israel",
+      "total_laid_off": 15864.0,
+      "event_count": 184
+    },
+    {
+      "country": "Brazil",
+      "total_laid_off": 11939.0,
+      "event_count": 90
+    },
+    {
+      "country": "China",
+      "total_laid_off": 8190.0,
+      "event_count": 31
+    },
+    {
+      "country": "Australia",
+      "total_laid_off": 8045.0,
+      "event_count": 86
+    },
+    {
+      "country": "Singapore",
+      "total_laid_off": 7533.0,
+      "event_count": 59
+    },
+    {
+      "country": "Indonesia",
+      "total_laid_off": 5711.0,
+      "event_count": 41
+    },
+    {
+      "country": "Japan",
+      "total_laid_off": 4285.0,
+      "event_count": 8
+    },
+    {
+      "country": "Kenya",
+      "total_laid_off": 3156.0,
+      "event_count": 15
+    }
+  ],
+  "monthly_trend": [
+    {
+      "year_month": "2020-03",
+      "total_laid_off": 9628.0,
+      "event_count": 121
+    },
+    {
+      "year_month": "2020-04",
+      "total_laid_off": 26710.0,
+      "event_count": 270
+    },
+    {
+      "year_month": "2020-05",
+      "total_laid_off": 25804.0,
+      "event_count": 110
+    },
+    {
+      "year_month": "2020-06",
+      "total_laid_off": 7627.0,
+      "event_count": 49
+    },
+    {
+      "year_month": "2020-07",
+      "total_laid_off": 7112.0,
+      "event_count": 27
+    },
+    {
+      "year_month": "2020-08",
+      "total_laid_off": 1969.0,
+      "event_count": 19
+    },
+    {
+      "year_month": "2020-09",
+      "total_laid_off": 609.0,
+      "event_count": 15
+    },
+    {
+      "year_month": "2020-10",
+      "total_laid_off": 450.0,
+      "event_count": 9
+    },
+    {
+      "year_month": "2020-11",
+      "total_laid_off": 237.0,
+      "event_count": 11
+    },
+    {
+      "year_month": "2020-12",
+      "total_laid_off": 852.0,
+      "event_count": 4
+    },
+    {
+      "year_month": "2021-01",
+      "total_laid_off": 6813.0,
+      "event_count": 10
+    },
+    {
+      "year_month": "2021-02",
+      "total_laid_off": 868.0,
+      "event_count": 8
+    },
+    {
+      "year_month": "2021-03",
+      "total_laid_off": 47.0,
+      "event_count": 4
+    },
+    {
+      "year_month": "2021-04",
+      "total_laid_off": 261.0,
+      "event_count": 4
+    },
+    {
+      "year_month": "2021-05",
+      "total_laid_off": 0.0,
+      "event_count": 1
+    },
+    {
+      "year_month": "2021-06",
+      "total_laid_off": 2434.0,
+      "event_count": 1
+    },
+    {
+      "year_month": "2021-07",
+      "total_laid_off": 80.0,
+      "event_count": 1
+    },
+    {
+      "year_month": "2021-08",
+      "total_laid_off": 1867.0,
+      "event_count": 3
+    },
+    {
+      "year_month": "2021-09",
+      "total_laid_off": 161.0,
+      "event_count": 5
+    },
+    {
+      "year_month": "2021-10",
+      "total_laid_off": 22.0,
+      "event_count": 2
+    },
+    {
+      "year_month": "2021-11",
+      "total_laid_off": 2070.0,
+      "event_count": 2
+    },
+    {
+      "year_month": "2021-12",
+      "total_laid_off": 1200.0,
+      "event_count": 3
+    },
+    {
+      "year_month": "2022-01",
+      "total_laid_off": 510.0,
+      "event_count": 5
+    },
+    {
+      "year_month": "2022-02",
+      "total_laid_off": 3685.0,
+      "event_count": 12
+    },
+    {
+      "year_month": "2022-03",
+      "total_laid_off": 5714.0,
+      "event_count": 18
+    },
+    {
+      "year_month": "2022-04",
+      "total_laid_off": 4128.0,
+      "event_count": 29
+    },
+    {
+      "year_month": "2022-05",
+      "total_laid_off": 12985.0,
+      "event_count": 79
+    },
+    {
+      "year_month": "2022-06",
+      "total_laid_off": 18144.0,
+      "event_count": 196
+    },
+    {
+      "year_month": "2022-07",
+      "total_laid_off": 16238.0,
+      "event_count": 161
+    },
+    {
+      "year_month": "2022-08",
+      "total_laid_off": 13055.0,
+      "event_count": 158
+    },
+    {
+      "year_month": "2022-09",
+      "total_laid_off": 5881.0,
+      "event_count": 94
+    },
+    {
+      "year_month": "2022-10",
+      "total_laid_off": 20671.0,
+      "event_count": 109
+    },
+    {
+      "year_month": "2022-11",
+      "total_laid_off": 53594.0,
+      "event_count": 231
+    },
+    {
+      "year_month": "2022-12",
+      "total_laid_off": 10664.0,
+      "event_count": 139
+    },
+    {
+      "year_month": "2023-01",
+      "total_laid_off": 89709.0,
+      "event_count": 277
+    },
+    {
+      "year_month": "2023-02",
+      "total_laid_off": 40002.0,
+      "event_count": 182
+    },
+    {
+      "year_month": "2023-03",
+      "total_laid_off": 37963.0,
+      "event_count": 127
+    },
+    {
+      "year_month": "2023-04",
+      "total_laid_off": 20100.0,
+      "event_count": 98
+    },
+    {
+      "year_month": "2023-05",
+      "total_laid_off": 15127.0,
+      "event_count": 98
+    },
+    {
+      "year_month": "2023-06",
+      "total_laid_off": 11206.0,
+      "event_count": 117
+    },
+    {
+      "year_month": "2023-07",
+      "total_laid_off": 11690.0,
+      "event_count": 102
+    },
+    {
+      "year_month": "2023-08",
+      "total_laid_off": 10178.0,
+      "event_count": 106
+    },
+    {
+      "year_month": "2023-09",
+      "total_laid_off": 4707.0,
+      "event_count": 69
+    },
+    {
+      "year_month": "2023-10",
+      "total_laid_off": 8176.0,
+      "event_count": 81
+    },
+    {
+      "year_month": "2023-11",
+      "total_laid_off": 8373.0,
+      "event_count": 73
+    },
+    {
+      "year_month": "2023-12",
+      "total_laid_off": 8429.0,
+      "event_count": 60
+    },
+    {
+      "year_month": "2024-01",
+      "total_laid_off": 34137.0,
+      "event_count": 123
+    },
+    {
+      "year_month": "2024-02",
+      "total_laid_off": 15729.0,
+      "event_count": 80
+    },
+    {
+      "year_month": "2024-03",
+      "total_laid_off": 7403.0,
+      "event_count": 37
+    },
+    {
+      "year_month": "2024-04",
+      "total_laid_off": 22423.0,
+      "event_count": 59
+    },
+    {
+      "year_month": "2024-05",
+      "total_laid_off": 11011.0,
+      "event_count": 51
+    },
+    {
+      "year_month": "2024-06",
+      "total_laid_off": 10083.0,
+      "event_count": 46
+    },
+    {
+      "year_month": "2024-07",
+      "total_laid_off": 9051.0,
+      "event_count": 39
+    },
+    {
+      "year_month": "2024-08",
+      "total_laid_off": 25944.0,
+      "event_count": 50
+    },
+    {
+      "year_month": "2024-09",
+      "total_laid_off": 4036.0,
+      "event_count": 37
+    },
+    {
+      "year_month": "2024-10",
+      "total_laid_off": 3782.0,
+      "event_count": 40
+    },
+    {
+      "year_month": "2024-11",
+      "total_laid_off": 6755.0,
+      "event_count": 43
+    },
+    {
+      "year_month": "2024-12",
+      "total_laid_off": 2568.0,
+      "event_count": 28
+    },
+    {
+      "year_month": "2025-01",
+      "total_laid_off": 2537.0,
+      "event_count": 32
+    },
+    {
+      "year_month": "2025-02",
+      "total_laid_off": 16474.0,
+      "event_count": 51
+    },
+    {
+      "year_month": "2025-03",
+      "total_laid_off": 8914.0,
+      "event_count": 22
+    },
+    {
+      "year_month": "2025-04",
+      "total_laid_off": 25220.0,
+      "event_count": 28
+    },
+    {
+      "year_month": "2025-05",
+      "total_laid_off": 10577.0,
+      "event_count": 27
+    },
+    {
+      "year_month": "2025-06",
+      "total_laid_off": 1606.0,
+      "event_count": 16
+    },
+    {
+      "year_month": "2025-07",
+      "total_laid_off": 16648.0,
+      "event_count": 31
+    },
+    {
+      "year_month": "2025-08",
+      "total_laid_off": 6452.0,
+      "event_count": 26
+    },
+    {
+      "year_month": "2025-09",
+      "total_laid_off": 4454.0,
+      "event_count": 29
+    },
+    {
+      "year_month": "2025-10",
+      "total_laid_off": 19240.0,
+      "event_count": 25
+    },
+    {
+      "year_month": "2025-11",
+      "total_laid_off": 8932.0,
+      "event_count": 25
+    },
+    {
+      "year_month": "2025-12",
+      "total_laid_off": 1552.0,
+      "event_count": 21
+    },
+    {
+      "year_month": "2026-01",
+      "total_laid_off": 25183.0,
+      "event_count": 32
+    },
+    {
+      "year_month": "2026-02",
+      "total_laid_off": 11269.0,
+      "event_count": 28
+    },
+    {
+      "year_month": "2026-03",
+      "total_laid_off": 16698.0,
+      "event_count": 35
+    },
+    {
+      "year_month": "2026-04",
+      "total_laid_off": 5085.0,
+      "event_count": 36
+    },
+    {
+      "year_month": "2026-05",
+      "total_laid_off": 29002.0,
+      "event_count": 50
+    },
+    {
+      "year_month": "2026-06",
+      "total_laid_off": 26460.0,
+      "event_count": 50
+    },
+    {
+      "year_month": "2026-07",
+      "total_laid_off": 11000.0,
+      "event_count": 46
+    }
+  ],
+  "yearly_trend": [
+    {
+      "year": 2020,
+      "total_laid_off": 80998.0,
+      "event_count": 635
+    },
+    {
+      "year": 2021,
+      "total_laid_off": 15823.0,
+      "event_count": 44
+    },
+    {
+      "year": 2022,
+      "total_laid_off": 165269.0,
+      "event_count": 1231
+    },
+    {
+      "year": 2023,
+      "total_laid_off": 265660.0,
+      "event_count": 1390
+    },
+    {
+      "year": 2024,
+      "total_laid_off": 152922.0,
+      "event_count": 633
+    },
+    {
+      "year": 2025,
+      "total_laid_off": 122606.0,
+      "event_count": 333
+    },
+    {
+      "year": 2026,
+      "total_laid_off": 124697.0,
+      "event_count": 277
+    }
+  ],
+  "stage_summary": [
+    {
+      "stage": "Post-IPO",
+      "total_laid_off": 583686.0,
+      "event_count": 1091
+    },
+    {
+      "stage": "Unknown",
+      "total_laid_off": 82425.0,
+      "event_count": 774
+    },
+    {
+      "stage": "Acquired",
+      "total_laid_off": 74142.0,
+      "event_count": 412
+    },
+    {
+      "stage": "Series B",
+      "total_laid_off": 32770.0,
+      "event_count": 491
+    },
+    {
+      "stage": "Series D",
+      "total_laid_off": 27877.0,
+      "event_count": 363
+    },
+    {
+      "stage": "Series C",
+      "total_laid_off": 27869.0,
+      "event_count": 452
+    },
+    {
+      "stage": "Series E",
+      "total_laid_off": 25607.0,
+      "event_count": 207
+    },
+    {
+      "stage": "Series F",
+      "total_laid_off": 16854.0,
+      "event_count": 126
+    },
+    {
+      "stage": "Private Equity",
+      "total_laid_off": 15120.0,
+      "event_count": 86
+    },
+    {
+      "stage": "Series A",
+      "total_laid_off": 9247.0,
+      "event_count": 272
+    },
+    {
+      "stage": "Series H",
+      "total_laid_off": 8497.0,
+      "event_count": 36
+    },
+    {
+      "stage": "Subsidiary",
+      "total_laid_off": 7996.0,
+      "event_count": 31
+    },
+    {
+      "stage": "Series G",
+      "total_laid_off": 5279.0,
+      "event_count": 29
+    },
+    {
+      "stage": "Series J",
+      "total_laid_off": 4700.0,
+      "event_count": 11
+    },
+    {
+      "stage": "Series I",
+      "total_laid_off": 3155.0,
+      "event_count": 9
+    },
+    {
+      "stage": "Seed",
+      "total_laid_off": 2751.0,
+      "event_count": 153
+    }
+  ]
+}
