@@ -1,6 +1,6 @@
 # 📉 Global Tech Layoffs Data Analysis & Machine Learning Platform
 
-An end-to-end Python Data Analytics, Exploratory Data Analysis (EDA), and Machine Learning prediction project built on the global tech workforce layoffs dataset (`layoffs1.csv`).
+An end-to-end Python Data Analytics, Exploratory Data Analysis (EDA), and Machine Learning prediction project built on the global tech workforce layoffs dataset by Swapnil Tripati, available on [Kaggle](https://www.kaggle.com/datasets/swapniltripati/layoffs).   
 
 ---
 
